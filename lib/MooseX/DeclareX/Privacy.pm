@@ -10,7 +10,32 @@ MooseX::DeclareX::Privacy - shiny syntax for MooseX::Privacy
 
 =head1 SYNOPSIS
 
+	class Person extends Mammal
+	{
+		private method decide ($choices) {
+			...;
+		}
+	}
+
 =head1 DESCRIPTION
+
+This distribution adds three new plugins to L<MooseX::DeclareX>.
+
+=over
+
+=item C<< private method >>
+
+A method that can only be called from within this class.
+
+=item C<< protected method >>
+
+A method that can be called from within this class, or from derived classes.
+
+=item C<< public method >>
+
+Essentially a no-op.
+
+=back
 
 =head1 BUGS
 

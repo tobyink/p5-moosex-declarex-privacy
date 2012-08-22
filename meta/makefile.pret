@@ -1,0 +1,8 @@
+# This file provides instructions for packaging.
+
+`MooseX-DeclareX-Privacy`
+	perl_version_from m`MooseX::DeclareX::Privacy`;
+	version_from      m`MooseX::DeclareX::Privacy`;
+	readme_from       m`MooseX::DeclareX::Privacy`;
+	test_requires     p`Test::More 0.61`  .
+

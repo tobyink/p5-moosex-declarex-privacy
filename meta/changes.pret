@@ -1,6 +1,6 @@
 # This file acts as the project's changelog.
 
-`MooseX-DeclareX-Privacy 0.001 cpan:TOBYINK`
+`MooseX-DeclareX-Privacy 0.003 cpan:TOBYINK`
 	issued  2012-08-22;
-	label   "Initial release".
+	label   "Split out from MooseX-DeclareX; no functional changes".
 

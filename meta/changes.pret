@@ -9,3 +9,9 @@
 	changeset [
 		item "Modules were being installed in an incorrectly named directory (wrong case)."^^Bugfix;
 	].
+
+`MooseX-DeclareX-Privacy 0.005 cpan:TOBYINK`
+	issued  2013-07-03;
+	changeset [
+		item "Get MooseX::DeclareX::Privacy actually working!"^^Bugfix;
+	].

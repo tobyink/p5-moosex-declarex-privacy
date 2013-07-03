@@ -22,6 +22,16 @@ sub plugin_setup
 		if $kw->can('add_namespace_customizations');
 }
 
+sub HAS
+{
+	my $attrs = shift;
+	Moose->throw_error('Usage: public has \'name\' => ( key => value, ... )')
+		if @_ % 2 == 1;
+	$attrs = [$attrs] unless ref $attrs eq 'ARRAY';
+	my %options = ( definition_context => Moose::Util::_caller_info(), @_ );
+	caller->meta->add_attribute($_, %options) for @$attrs;
+}
+
 package MooseX::DeclareX::Plugin::public::Role;
 
 BEGIN {
@@ -49,6 +59,8 @@ BEGIN {
 
 use Moose;
 extends 'MooseX::DeclareX::MethodPrefix';
+
+has '+handle_has' => ( default => 1 );
 
 override prefix_keyword => sub { 'public' };
 override install_method => sub {

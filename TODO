@@ -1,0 +1,7 @@
+Error:
+
+1..10
+syntax error at t/08privacy.t line 7, near "_has  priv_attr"
+BEGIN not safe after errors--compilation aborted at /home/tai/.perlbrew/libs/perl-5.18.0@default/lib/perl5/Parse/Method/Signatures/Sig.pm line 3.
+Compilation failed in require at /home/tai/.perlbrew/libs/perl-5.18.0@default/lib/perl5/Parse/Method/Signatures.pm line 241.
+

@@ -4,7 +4,7 @@
 	perl_version_from m`MooseX::DeclareX::Privacy`;
 	version_from      m`MooseX::DeclareX::Privacy`;
 	readme_from       m`MooseX::DeclareX::Privacy`;
-	requires          p`MooseX::DeclareX`;
+	requires          p`MooseX::DeclareX 0.004`;
 	requires          p`MooseX::Privacy`;
 	test_requires     p`Test::Exception`;
 	test_requires     p`Test::More 0.61`.

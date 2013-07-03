@@ -1,6 +1,8 @@
-use Test::More tests => 10;
-use Test::Exception;
-use MooseX::DeclareX plugins => [qw(private public protected)];
+use Test::More tests => 13;
+use MooseX::DeclareX
+	keywords => [qw(class role)],
+	plugins  => [qw(private public protected)];
+use Test::Fatal;
 
 class Local
 {
@@ -33,15 +35,15 @@ class Local::Sub extends Local
 my $x = Local->new;
 my $y = Local::Sub->new;
 
-throws_ok { $x->priv } qr{Local::priv method is private};
-throws_ok { $y->priv } qr{Local::Sub::priv method is private};
-throws_ok { $x->prot } qr{Local::prot method is protected};
-throws_ok { $y->prot } qr{Local::Sub::prot method is protected};
-throws_ok { $y->priv_sub } qr{Local::Sub::priv method is private};
+like exception { $x->priv }, qr{is private};
+like exception { $y->priv }, qr{is private};
+like exception { $x->prot }, qr{is protected};
+like exception { $y->prot }, qr{is protected};
+like exception { $y->priv_sub }, qr{is private};
 
-lives_and { is($x->pub, 100) };
-lives_and { is($y->pub, 100) };
-lives_and { is($y->prot_sub, 105) };
+ok !exception { is($x->pub, 100) };
+ok !exception { is($y->pub, 100) };
+ok !exception { is($y->prot_sub, 105) };
 
-throws_ok { $x->priv_attr } qr{Local::priv_attr attribute is private};
-throws_ok { $y->priv_attr } qr{Local::Sub::priv_attr attribute is private};
+like exception { $x->priv_attr }, qr{is private};
+like exception { $y->priv_attr }, qr{is private};

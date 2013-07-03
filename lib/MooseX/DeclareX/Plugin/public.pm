@@ -60,7 +60,7 @@ BEGIN {
 use Moose;
 extends 'MooseX::DeclareX::MethodPrefix';
 
-has '+handle_has' => ( default => 1 );
+sub handle_has { 'MooseX::DeclareX::Plugin::public::HAS' };
 
 override prefix_keyword => sub { 'public' };
 override install_method => sub {

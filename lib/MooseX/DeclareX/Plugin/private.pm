@@ -30,7 +30,7 @@ sub HAS
 	Moose->throw_error('Usage: private has \'name\' => ( key => value, ... )')
 		if @_ % 2 == 1;
 	$attrs = [$attrs] unless ref $attrs eq 'ARRAY';
-	my %options = ( definition_context => Moose::Util::_caller_info(), @_ );
+	my %options = ( definition_context => +{ Moose::Util::_caller_info() }, @_ );
 	push @{ $options{traits} }, 'Private';
 	caller->meta->add_attribute($_, %options) for @$attrs;
 }
@@ -64,7 +64,7 @@ BEGIN {
 use Moose;
 extends 'MooseX::DeclareX::MethodPrefix';
 
-has '+handle_has' => ( default => 1 );
+sub handle_has { 'MooseX::DeclareX::Plugin::private::HAS' };
 
 override prefix_keyword => sub { 'private' };
 override install_method => sub {

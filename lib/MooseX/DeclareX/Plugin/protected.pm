@@ -64,7 +64,7 @@ BEGIN {
 use Moose;
 extends 'MooseX::DeclareX::MethodPrefix';
 
-has '+handle_has' => ( default => 1 );
+sub handle_has { 'MooseX::DeclareX::Plugin::protected::HAS' };
 
 override prefix_keyword => sub { 'protected' };
 override install_method => sub {

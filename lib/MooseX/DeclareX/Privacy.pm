@@ -1,6 +1,6 @@
 package MooseX::DeclareX::Privacy;
 $MooseX::DeclareX::Privacy::AUTHORITY = 'cpan:TOBYINK';
-$MooseX::DeclareX::Privacy::VERSION   = '0.005';
+$MooseX::DeclareX::Privacy::VERSION   = '0.006';
 
 __END__
 

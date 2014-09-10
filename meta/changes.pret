@@ -15,3 +15,10 @@
 	changeset [
 		item "Get MooseX::DeclareX::Privacy actually working!"^^Bugfix;
 	].
+
+`MooseX-DeclareX-Privacy 0.006 cpan:TOBYINK`
+	issued    2014-09-10;
+	changeset [
+		item "Switch to Dist::Inkt."^^Packaging;
+	].
+
